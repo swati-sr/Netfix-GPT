@@ -1,13 +1,20 @@
 import "./App.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Browse from "./components/Browse";
+import Login from "./components/Login";
 
 function App() {
-  return (
-    <div className="App">
-      <h1 className="text-red-900 text-xl font-bold">
-        Base setup of my ShowFlick
-      </h1>
-    </div>
-  );
+  const appRouter = createBrowserRouter([
+    {
+      path: "/",
+      element: <Login />,
+    },
+    {
+      path: "/browse",
+      element: <Browse />,
+    },
+  ]);
+  return <RouterProvider router={appRouter} />;
 }
 
 export default App;
