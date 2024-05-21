@@ -7,7 +7,6 @@ import {
   signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 
@@ -15,11 +14,9 @@ const Login = () => {
   const dispatch = useDispatch();
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
-
   const fullName = useRef(null);
   const email = useRef(null);
   const password = useRef(null);
-  const navigate = useNavigate();
 
   const handleSubmitButton = () => {
     const validityCheckMessage = checkFormValidation(
@@ -54,7 +51,6 @@ const Login = () => {
                   photoURL: photoURL,
                 })
               );
-              navigate("/browse");
             })
             .catch((error) => {
               setErrorMessage(error.message);
@@ -72,9 +68,7 @@ const Login = () => {
         email.current?.value,
         password.current?.value
       )
-        .then((userCredential) => {
-          navigate("/browse");
-        })
+        .then((userCredential) => {})
         .catch((error) => {
           setErrorMessage(error.message);
         });
