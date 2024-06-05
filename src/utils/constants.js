@@ -11,8 +11,7 @@ export const API_OPTIONS = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0ZDNlZjU2MzU5M2U4Y2UwZWYwYzc1ZjUxOTA0MjcwMyIsInN1YiI6IjY2NGQxOWIzZTFjY2QwNGMyNDYxNTAzOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Hzvq_JK-Z6DM3yQxD_B2Rni-BzjGtvsfKuBtU9Bw70I",
+    Authorization: "Bearer " + process.env.REACT_APP_TMDB_KEY,
   },
 };
 
@@ -26,3 +25,11 @@ export const SUPPORTED_LANGUAGE_CODE = [
   { id: "japanese", name: "Japanese" },
   { id: "german", name: "German" },
 ];
+
+export const GEMINI_API_KEY = process.env.REACT_APP_GEMINI_API_KEY;
+
+export const gptSearchSuggestionOne =
+  "Act as a movie recommendation system and suggest some movie for the query: ";
+
+export const gptSearchSuggestionTwo =
+  ". Only give me names of 5 items, comma separated like the example result given ahead. Example Result: Koi Mil Gaya, My name is Khan, Dear Zindagi, Tamasha, Don";
