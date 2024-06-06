@@ -6,11 +6,17 @@ import { BG_URL } from "../utils/constants";
 const GptContainer = () => {
   return (
     <div>
-      <div className="fixed -z-20">
-        <img src={BG_URL} alt="background" />
+      <div className="fixed -z-10 w-full h-screen">
+        <img
+          src={BG_URL}
+          alt="background"
+          className="w-full h-full object-cover md:object-none"
+        />
       </div>
-      <GptSearchBar />
-      <GptMovieSuggestions />
+      <div>
+        <GptSearchBar />
+        <GptMovieSuggestions />
+      </div>
     </div>
   );
 };

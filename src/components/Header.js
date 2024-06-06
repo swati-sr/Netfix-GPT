@@ -55,35 +55,35 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="absolute px-10 pt-5 bg-gradient-to-b from-black h-20 w-full z-10 flex justify-between">
-      <img className="w-40 pb-2" src={LOGO} alt="logo" />
+    <div className="absolute px-10 pt-5 bg-gradient-to-b from-black h-20 w-full z-10 flex flex-col justify-between md:flex-row">
+      <img className="w-40 pb-2 mx-auto md:mx-0" src={LOGO} alt="logo" />
       {user && (
-        <div className="flex gap-4 p-1">
+        <div className="flex justify-between md:gap-4 p-1">
           <button
-            className="bg-gradient-to-l from-slate-400 to-[#f54848] w-24 py-1 px-2 mr-4 h-8 rounded-md mt-1 font-bold text-sm"
+            className="bg-gradient-to-r from-zinc-900 to-black w-24 py-1 px-2 mr-4 h-8 rounded-md mt-1 font-bold text-sm text-white"
             onClick={handleGptSearchClick}
           >
             {gptSearchView ? "Home" : "GPT Search"}
           </button>
           {gptSearchView && (
             <select
-              className="w-28 py-1 px-2 mr-3 h-8 rounded-md mt-1 font-bold text-sm text-white bg-gray-500"
+              className="w-28 py-1 px-2 mr-3 h-8 rounded-md mt-1 font-bold text-sm text-white bg-gradient-to-r from-zinc-900 to-black"
               onChange={handleLanguageChange}
             >
               {SUPPORTED_LANGUAGE_CODE.map((lang) => (
-                <option key={lang.id} value={lang.id}>
+                <option key={lang.id} value={lang.id} className="bg-zinc-900">
                   {lang.name}
                 </option>
               ))}
             </select>
           )}
           <img
-            className="rounded-md w-8 h-8 mt-1"
+            className="rounded-md w-8 h-8 mt-1 hidden md:inline-block"
             src={user.photoURL}
             alt="user-icon"
           />
           <button
-            className="w-24 h-12 font-bold mb-1 text-white"
+            className="bg-gradient-to-r from-zinc-900 to-black w-24 py-1 px-2 mr-4 h-8 rounded-md mt-1 font-bold text-sm text-white"
             onClick={handleSignOut}
           >
             Sign Out
