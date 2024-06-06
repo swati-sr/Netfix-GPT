@@ -19,7 +19,7 @@ const useNowPlayingMovies = () => {
 
   useEffect(() => {
     !nowPlayingMovies && getNowPlayingMovies();
-  }, [nowPlayingMovies, dispatch]);
+  }, []);
 };
 
 export default useNowPlayingMovies;
