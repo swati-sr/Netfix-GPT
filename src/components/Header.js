@@ -52,7 +52,7 @@ const Header = () => {
     });
 
     return () => unsubscribe;
-  }, []);
+  }, [dispatch, navigate, auth]);
 
   return (
     <div className="absolute px-10 pt-5 bg-gradient-to-b from-black h-20 w-full z-10 flex flex-col justify-between md:flex-row">
