@@ -10,7 +10,7 @@ const GptContainer = () => {
         <img
           src={BG_URL}
           alt="background"
-          className="w-full h-full object-cover md:object-none"
+          className="w-full h-full object-cover"
         />
       </div>
       <div>

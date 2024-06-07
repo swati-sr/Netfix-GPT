@@ -60,14 +60,14 @@ const Header = () => {
       {user && (
         <div className="flex justify-between md:gap-4 p-1">
           <button
-            className="bg-gradient-to-r from-zinc-900 to-black w-24 py-1 px-2 mr-4 h-8 rounded-md mt-1 font-bold text-sm text-white"
+            className="bg-zinc-900 w-24 py-1 px-2 mr-4 h-8 rounded-md mt-1 font-bold text-sm text-white"
             onClick={handleGptSearchClick}
           >
             {gptSearchView ? "Home" : "GPT Search"}
           </button>
           {gptSearchView && (
             <select
-              className="w-28 py-1 px-2 mr-3 h-8 rounded-md mt-1 font-bold text-sm text-white bg-gradient-to-r from-zinc-900 to-black"
+              className="w-28 py-1 px-1 mr-3 h-8 rounded-md mt-1 font-bold text-sm text-white bg-zinc-900"
               onChange={handleLanguageChange}
             >
               {SUPPORTED_LANGUAGE_CODE.map((lang) => (
@@ -83,7 +83,7 @@ const Header = () => {
             alt="user-icon"
           />
           <button
-            className="bg-gradient-to-r from-zinc-900 to-black w-24 py-1 px-2 mr-4 h-8 rounded-md mt-1 font-bold text-sm text-white"
+            className="bg-zinc-900 w-24 py-1 px-1 md:px-2 md:mr-4 h-8 rounded-md mt-1 font-bold text-sm text-white"
             onClick={handleSignOut}
           >
             Sign Out
