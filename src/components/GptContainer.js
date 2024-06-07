@@ -5,15 +5,15 @@ import { BG_URL } from "../utils/constants";
 
 const GptContainer = () => {
   return (
-    <div>
-      <div className="fixed -z-10 w-full h-screen">
+    <div className="relative w-full h-screen overflow-hidden">
+      <div className="fixed inset-0 -z-10">
         <img
           src={BG_URL}
           alt="background"
-          className="w-full h-full object-cover md:object-none"
+          className="w-full h-full object-cover"
         />
       </div>
-      <div>
+      <div className="relative z-10 mt-8">
         <GptSearchBar />
         <GptMovieSuggestions />
       </div>
