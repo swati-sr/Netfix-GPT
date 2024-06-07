@@ -63,7 +63,7 @@ const Header = () => {
             className="bg-zinc-900 w-24 py-1 px-2 mr-4 h-8 rounded-md mt-1 font-bold text-sm text-white"
             onClick={handleGptSearchClick}
           >
-            {gptSearchView ? "Home" : "GPT Search"}
+            {gptSearchView ? "Home" : "Search"}
           </button>
           {gptSearchView && (
             <select
