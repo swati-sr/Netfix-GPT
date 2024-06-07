@@ -55,19 +55,23 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="absolute px-10 pt-5 bg-gradient-to-b from-black h-20 w-full z-10 flex flex-col justify-between md:flex-row">
-      <img className="w-40 pb-2 mx-auto md:mx-0" src={LOGO} alt="logo" />
+    <div className="fixed top-0 left-0 right-0 px-4 pt-5 bg-gradient-to-b from-black h-20 w-full z-20 flex flex-col justify-between md:flex-row md:px-10">
+      <img
+        className="w-32 pb-2 mx-auto md:mx-0 md:w-40"
+        src={LOGO}
+        alt="logo"
+      />
       {user && (
         <div className="flex justify-between md:gap-4 p-1">
           <button
-            className="bg-gradient-to-r from-zinc-900 to-black w-24 py-1 px-2 mr-4 h-8 rounded-md mt-1 font-bold text-sm text-white"
+            className="bg-zinc-900 w-24 py-1 px-2 mb-2 md:mb-0 h-8 rounded-md mt-1 font-bold text-sm text-white"
             onClick={handleGptSearchClick}
           >
-            {gptSearchView ? "Home" : "GPT Search"}
+            {gptSearchView ? "Home" : "Search"}
           </button>
           {gptSearchView && (
             <select
-              className="w-28 py-1 px-2 mr-3 h-8 rounded-md mt-1 font-bold text-sm text-white bg-gradient-to-r from-zinc-900 to-black"
+              className="bg-zinc-900 w-28 py-1 px-2 mb-2 md:mb-0 h-8 rounded-md mt-1 font-bold text-sm text-white"
               onChange={handleLanguageChange}
             >
               {SUPPORTED_LANGUAGE_CODE.map((lang) => (
@@ -83,7 +87,7 @@ const Header = () => {
             alt="user-icon"
           />
           <button
-            className="bg-gradient-to-r from-zinc-900 to-black w-24 py-1 px-2 mr-4 h-8 rounded-md mt-1 font-bold text-sm text-white"
+            className="bg-zinc-900 w-24 py-1 px-2 h-8 rounded-md mt-1 font-bold text-sm text-white"
             onClick={handleSignOut}
           >
             Sign Out
