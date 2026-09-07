@@ -26,7 +26,7 @@ const GptSearchBar = () => {
     };
 
     fetch(
-      "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=" +
+      "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=" +
         GEMINI_API_KEY,
       {
         method: "POST",
@@ -34,12 +34,12 @@ const GptSearchBar = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(request),
-      }
+      },
     )
       .then((response) => {
         if (!response.ok) {
           return Promise.reject(
-            new Error("Network response was not ok " + response.statusText)
+            new Error("Network response was not ok " + response.statusText),
           );
         }
         return response.json();
@@ -48,14 +48,14 @@ const GptSearchBar = () => {
         const gptMovies =
           json?.candidates[0]?.content?.parts[0]?.text.split(",");
         const promiseDataArray = gptMovies.map((movie) =>
-          searchGptDataInTMDB(movie, API_OPTIONS)
+          searchGptDataInTMDB(movie, API_OPTIONS),
         );
         const tmdbResults = await Promise.all(promiseDataArray);
         dispatch(
           addGptMovieResults({
             gptMovieNames: gptMovies,
             gptMoviesList: tmdbResults,
-          })
+          }),
         );
       })
       .catch((error) => {
