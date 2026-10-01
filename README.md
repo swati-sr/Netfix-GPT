@@ -68,3 +68,12 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# Setting up Testing in App
+
+- Install React Testing Library
+- Install JEST
+- Add Babel dependencies to use JEST over Babel
+- Configure Babel
+- Configure Parcel Config file to disable default Babel transpilation so that we can use JEST configuration and no conflict may occur
+- Url to explore Parcel config [https://parceljs.org/languages/javascript/#usage-with-other-tools]
