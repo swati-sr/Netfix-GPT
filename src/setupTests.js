@@ -1,5 +1,20 @@
-// jest-dom adds custom jest matchers for asserting on DOM nodes.
-// allows you to do things like:
-// expect(element).toHaveTextContent(/react/i)
-// learn more: https://github.com/testing-library/jest-dom
-import '@testing-library/jest-dom';
+const { TextEncoder, TextDecoder } = require("util");
+const { ReadableStream } = require("stream/web");
+
+global.TextEncoder = TextEncoder;
+global.TextDecoder = TextDecoder;
+global.ReadableStream = ReadableStream;
+
+global.Request = class Request {
+  constructor(url, options = {}) {
+    this.url = url;
+    this.method = options.method || "GET";
+    this.headers = options.headers || {};
+    this.signal = options.signal;
+  }
+};
+
+global.Response = class Response {};
+global.Headers = class Headers {};
+
+import "@testing-library/jest-dom";

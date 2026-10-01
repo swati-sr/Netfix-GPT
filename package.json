@@ -5,6 +5,15 @@
   "engines": {
     "node": "24.x"
   },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "moduleNameMapper": {
+      "\\.(css|less|scss|sass)$": "<rootDir>/src/__mocks__/styleMock.js"
+    },
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setupTests.js"
+    ]
+  },
   "dependencies": {
     "@google/generative-ai": "^0.12.0",
     "@testing-library/jest-dom": "^5.17.0",
@@ -20,7 +29,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "CI=false react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -42,12 +51,9 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "^8.0.6",
-    "@babel/preset-env": "^8.0.6",
     "@reduxjs/toolkit": "^2.2.5",
     "@testing-library/dom": "^10.4.2",
     "@testing-library/react": "^16.3.3",
-    "babel-jest": "^30.5.2",
     "jest": "^27.5.1",
     "react-router-dom": "^6.23.1",
     "tailwindcss": "^3.4.3"
