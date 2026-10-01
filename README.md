@@ -77,3 +77,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - Configure Babel
 - Configure Parcel Config file to disable default Babel transpilation so that we can use JEST configuration and no conflict may occur
 - Url to explore Parcel config [https://parceljs.org/languages/javascript/#usage-with-other-tools]
+- JEST -> npx jest --init
+- Install jsdom library --> if jest version 28 or above
